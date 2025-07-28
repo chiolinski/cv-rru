@@ -400,14 +400,6 @@ h2::after {
     text-align: left;
 }
 
-.skills-interests li .flag {
-    font-size: 1.8em;
-    line-height: 1;
-    display: inline-block;
-    vertical-align: middle;
-    flex-shrink: 0;
-}
-
 .skills-interests .level-circle {
     display: inline-flex;
     justify-content: center;
