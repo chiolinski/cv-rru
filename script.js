@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainTitle = document.querySelector('.main-title');
     const subtitle = document.querySelector('.subtitle');
 
-    const scrollThreshold = 100; // Cuántos píxeles de scroll para activar el cambio
+    const scrollThreshold = 100; 
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > scrollThreshold) {
