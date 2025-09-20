@@ -1,25 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const header = document.querySelector('.header');
-    const headerText = document.querySelector('.header-text');
-    const profilePhotoContainer = document.querySelector('.profile-photo-container');
-    const mainTitle = document.querySelector('.main-title');
-    const subtitle = document.querySelector('.subtitle');
+  const header = document.querySelector('.header');
+  const scrollThreshold = 100;
 
-    const scrollThreshold = 100; 
+  const onScroll = () => {
+    const shouldShrink = window.scrollY > scrollThreshold;
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > scrollThreshold) {
-            header.classList.add('scrolled');
-            headerText.classList.add('scrolled');
-            profilePhotoContainer.classList.add('scrolled');
-            mainTitle.classList.add('scrolled');
-            subtitle.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-            headerText.classList.remove('scrolled');
-            profilePhotoContainer.classList.remove('scrolled');
-            mainTitle.classList.remove('scrolled');
-            subtitle.classList.remove('scrolled');
-        }
-    });
+    // Alternamos la clase en el header (para estilos específicos)
+    header.classList.toggle('scrolled', shouldShrink);
+
+    // Y también en el body, para actualizar la variable --header-h (solo afecta en >=601px por CSS)
+    document.body.classList.toggle('scrolled', shouldShrink);
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll(); // estado inicial (por si entras ya scrolleado)
 });
